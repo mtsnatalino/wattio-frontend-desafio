@@ -32,25 +32,24 @@ mostrarOfertasBtn.addEventListener("click", () => {
     alert("Por Favor, insira um valor válido!");
     return;
   }
-});
 
-const ofertasFiltradas = ofertas.filter(
-  (oferta) =>
-    valorConta >= oferta.valorMinimoMensal &&
-    valorConta <= oferta.valorMaximoMensal
-);
+  const ofertasFiltradas = ofertas.filter(
+    (oferta) =>
+      valorConta >= oferta.valorMinimoMensal &&
+      valorConta <= oferta.valorMaximoMensal
+  );
 
-ofertasForm.innerHTML = "";
+  ofertasForm.innerHTML = "";
 
-if (ofertasFiltradas.length === 0) {
-  ofertasForm.innerHTML =
-    "<p>Nenhuma oferta disponível para o valor informado.</p>";
-  contratarBtn.style.display = "none";
-} else {
-  ofertasFiltradas.forEach((oferta, index) => {
-    const economia = valorConta * oferta.desconto;
+  if (ofertasFiltradas.length === 0) {
+    ofertasForm.innerHTML =
+      "<p>Nenhuma oferta disponível para o valor informado.</p>";
+    contratarBtn.style.display = "none";
+  } else {
+    ofertasFiltradas.forEach((oferta, index) => {
+      const economia = valorConta * oferta.desconto;
 
-    const ofertaElement = `
+      const ofertaElement = `
         <label>
             <input type="radio" name="oferta" value="${index}" />
             <div classe="oferta">
@@ -61,6 +60,11 @@ if (ofertasFiltradas.length === 0) {
             </div>
         </label>        
         `;
-    ofertasForm.insertAdjacentHTML("beforeend", ofertaElement);
-  });
-}
+      ofertasForm.insertAdjacentHTML("beforeend", ofertaElement);
+    });
+
+    contratarBtn.style.display = "block";
+  }
+
+  opcoesOfertas.style.display = "block";
+});
