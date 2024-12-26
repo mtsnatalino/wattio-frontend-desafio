@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #1a0b2e;
+  user-select: none;
+}
+
+body {
+  font-family: "Electrolize", sans-serif;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+
+.container h1 {
+  font-weight: 500;
+  font-size: 2rem;
+  color: #ecc030;
+  white-space: nowrap;
+}
+
+.container img {
+  padding: 20px;
+}
+
+h2 {
+  font-size: 1.3rem;
+  color: #ecc030;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  margin: 20px;
+  font-weight: 500;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ecc030, transparent);
+}
+
+input[type="number"] {
+  font-family: "Electrolize", sans-serif;
+  background-color: #fff;
+  padding: 10px;
+  font-size: 1rem;
+  border: 3px solid #ecc030;
+  border-radius: 5px;
+  outline: none;
+  text-align: center;
+  color: #000;
+  font-weight: 500;
+  width: 100%;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button {
+  font-family: "Exo 2", sans-serif;
+  padding: 10px 20px;
+  background-color: #e13232;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+}
+
+button:hover {
+    background-color: #9a3535;
+}
+
