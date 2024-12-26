@@ -68,3 +68,18 @@ mostrarOfertasBtn.addEventListener("click", () => {
 
   opcoesOfertas.style.display = "block";
 });
+
+
+contratarBtn.addEventListener('click', () => {
+    const ofertaSelecionada = document.querySelector('input[name="oferta"]:checked');
+
+    if(!ofertaSelecionada) {
+        alert('Por favor, selecione uma oferta antes de contratar.');
+        return;
+    }
+
+    const ofertaIndex = parseInt(ofertaSelecionada.value);
+    const ofertaEscolhida = ofertas[ofertaIndex];
+
+    alert(`Você contratou: ${ofertaEscolhida.nome}`)
+})
