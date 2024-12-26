@@ -95,7 +95,80 @@ button:hover {
   background-color: #9a3535;
 }
 
-h3 {
+#ofertasForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.oferta {
+  background: linear-gradient(145deg, #2e1b4c, #1a0b2e);
+  border: 2px solid #ecc030;
+  border-radius: 15px;
+  padding: 25px;
+  width: 280px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.oferta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, transparent, #ecc030, transparent);
+  animation: slideBorder 3s infinite linear;
+}
+
+@keyframes slideBorder {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.oferta h3 {
+  background: linear-gradient(145deg, #2e1b4c, #1a0b2e);
+  font-size: 1.5rem;
+  color: #ecc030;
+  margin-bottom: 15px;
+}
+
+.oferta p {
+  background: linear-gradient(145deg, #2e1b4c, #1a0b2e);
   font-size: 1rem;
-  padding: 1rem;
+  padding: 5px;
+  font-weight: 500;
+}
+
+.oferta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px rgba(0.4, 0.4, 0.4, 0.4);
+  border-color: #1f19206b;
+}
+
+input[type="radio"] {
+  margin-top: 2px;
+  margin-bottom: 10px;
+  transform: scale(1.3);
+  accent-color: #ecc030;
+}
+
+#contratarBtn {
+  margin-top: 20px;
+  padding: 13px 17px;
+  background-color: #28a745;
+  font-size: 1.5rem;
+  display: block;
+  margin: 20px auto;
+}
+
+#contratarBtn:hover {
+  background-color: #218838;
 }

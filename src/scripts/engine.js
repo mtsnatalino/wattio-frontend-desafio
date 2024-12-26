@@ -49,16 +49,22 @@ mostrarOfertasBtn.addEventListener("click", () => {
     ofertasFiltradas.forEach((oferta, index) => {
       const economia = valorConta * oferta.desconto;
 
-      const ofertaElement = `
-        <label>
+      const ofertaElement = `    
+            <label>      
+            <div class="oferta">
             <input type="radio" name="oferta" value="${index}" />
-            <div classe="oferta">
                 <h3>${oferta.nome}</h3>
-                <p>Valor da conta: R$ ${valorConta.toFixed(2)}</p>
-                <p>Desconto: R$ ${oferta.desconto * 100}%</p>
-                <p>Valor da conta: R$ ${economia.toFixed(2)}</p>
+                <p>Valor da conta: <span style="color: #ecc030">R$ ${valorConta.toFixed(
+                  2
+                )}</span></p>
+                <p>Desconto: <span style="color: #ecc030">R$ ${
+                  oferta.desconto * 100
+                }%</span></p>
+                <p>Valor da conta: <span style="color: #ecc030">R$ ${economia.toFixed(
+                  2
+                )}</span></p>
             </div>
-        </label>        
+            </label>
         `;
       ofertasForm.insertAdjacentHTML("beforeend", ofertaElement);
     });
@@ -69,17 +75,18 @@ mostrarOfertasBtn.addEventListener("click", () => {
   opcoesOfertas.style.display = "block";
 });
 
+contratarBtn.addEventListener("click", () => {
+  const ofertaSelecionada = document.querySelector(
+    'input[name="oferta"]:checked'
+  );
 
-contratarBtn.addEventListener('click', () => {
-    const ofertaSelecionada = document.querySelector('input[name="oferta"]:checked');
+  if (!ofertaSelecionada) {
+    alert("Por favor, selecione uma oferta antes de contratar.");
+    return;
+  }
 
-    if(!ofertaSelecionada) {
-        alert('Por favor, selecione uma oferta antes de contratar.');
-        return;
-    }
+  const ofertaIndex = parseInt(ofertaSelecionada.value);
+  const ofertaEscolhida = ofertas[ofertaIndex];
 
-    const ofertaIndex = parseInt(ofertaSelecionada.value);
-    const ofertaEscolhida = ofertas[ofertaIndex];
-
-    alert(`Você contratou: ${ofertaEscolhida.nome}`)
-})
+  alert(`Você contratou: ${ofertaEscolhida.nome}`);
+});
