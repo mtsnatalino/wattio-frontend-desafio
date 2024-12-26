@@ -62,7 +62,7 @@ input[type="number"] {
   background-color: #fff;
   padding: 10px;
   font-size: 1rem;
-  border: 3px solid #ecc030;
+  border: 2px solid #ecc030;
   border-radius: 5px;
   outline: none;
   text-align: center;
@@ -92,6 +92,10 @@ button {
 }
 
 button:hover {
-    background-color: #9a3535;
+  background-color: #9a3535;
 }
 
+h3 {
+  font-size: 1rem;
+  padding: 1rem;
+}
